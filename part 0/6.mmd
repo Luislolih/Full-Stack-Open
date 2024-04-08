@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant browser
+    participant server
+    participant database
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/spa
+    activate server
+    server->>database: Create new element "li"
+    activate database
+    database->>server: New element "li" created successfully
+    desactivate database
+    server->>browser: Element created successfully
+
+    show new element
+
+    desactivate server
